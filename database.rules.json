@@ -1,0 +1,48 @@
+{
+  "rules": {
+    "sgi": {
+      "catalogos": {
+        "servicios": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        },
+        "iglesias": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        },
+        "congregantes": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        }
+      },
+      "items": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+      },
+      "usuarios": {
+        "$uid": {
+          ".read": "auth != null",
+          ".write": "auth != null && auth.uid == $uid"
+        }
+      },
+      "config": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+      },
+      "congregantes": {
+        "servicios": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        },
+        "roles": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        },    
+        "iglesias": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        }
+      }
+    }
+  }
+}
