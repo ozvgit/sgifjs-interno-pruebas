@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo Congregantes</title>
+    <link rel="stylesheet" href="cCongregantes.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo-fijo">Registro Congregantes</h1>
+        <button class="boton-flotante" onclick="openModal()">+</button>
+        <button class="boton-flotante boton-flotante-reporte" onclick="generarReporte()" id="btn-reporte"><i class="fas fa-file-alt"></i></button>
+        <input type="text" id="input-busqueda" placeholder="Buscar congregante">
+        <!--button id="btn-buscar">Buscar</button-->
+        <div class="lista" id="mi-contenedor"></div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Agregar congregante</h2>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                      <td>Nombre</td>
+                      <td colspan="2"><input type="text" id="nombre" placeholder="nombre completo"></td>
+                    </tr>
+                    <tr>
+                      <td>Dirección</td>
+                      <td colspan="2"><input type="text" id="direccion" ></td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono</th>   
+                        <td colspan="2"><input type="tel" id="telefono" placeholder="Ingrese teléfono"></td>
+                        
+                    </tr>
+                    <tr>
+                      <td style="align-content: left;"><input type="checkbox" id="cCelula" name="cCelula"></td>
+                      <td colspan="2">¿Asiste a celula?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="align-content: left;"><input type="checkbox" id="cPrimera" name="cPrimera"></td>
+                        <td>¿Asiste por primera vez?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="align-content: left;"><input type="checkbox" id="cPalabra" name="cPalabra"></td>
+                        <td>¿Conoce de la palabra?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="align-content: left;"><input type="checkbox" id="cDiscipulado" name="cDiscipulado"></td>
+                        <td>¿Tiene el Discipulado basico?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="align-content: left;"><input type="checkbox" id="cHijos" name="cHijos"></td>
+                        <td>¿Tiene hijos menores?</td>
+                    </tr>
+                    <tr>
+                        <td>Iglesia</td> 
+                        <td >
+                            <input type="text" id="searchInputIglesia" placeholder="Buscar iglesia" style="width: 150px;">
+                            <input type="hidden" name="iglesiaKey" id="iglesiaKey">
+                            <input type="hidden" name="iglesiaEstado" id="iglesiaEstado">
+                            <!--input type="hidden" name="iglesiaKey" id="iglesiaKey">
+                            <input type="hidden" name="iglesiaEstado" id="iglesiaEstado"-->
+                        </td>       
+                        <td ><button id="btnAgregarIglesia" class="btn-agregar"><i class="fas fa-plus"></i></button></td>
+                      </tr>
+                      <tr style="border: none;" id="rIglesia">
+                          <td></td> 
+                          <td colspan="2" class="celda-div"><div id="suggestionsIglesia"></div></td>
+                      </tr>
+                      <tr>
+                          <td>Iglesias</select>
+                          <td><select id="selectIglesias"></select>
+                          <td><button id="btnEliminarIglesia">Eliminar</button></td>  
+                      </tr>
+                    <tr>
+                      <td>Servicio</td> 
+                      <td >
+                        <input type="text" id="searchInput" placeholder="Buscar servicio" style="width: 150px;">
+                        <input type="hidden" name="servicioKey" id="servicioKey">
+                        <input type="hidden" name="servicioEstado" id="servicioEstado">
+                      </td>       
+                      <td ><button id="btnAgregar" class="btn-agregar"><i class="fas fa-plus"></i></button></td>
+                    </tr>
+                    <tr style="border: none;" id="rServicio">
+                        <td></td> 
+                        <td colspan="2" class="celda-div"><div id="suggestions"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Servicios</select>
+                        <td><select id="selectServicios"></select>
+                        <td><button id="btnEliminar">Eliminar</button></td>  
+                    </tr>
+
+                </table>
+ 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-close" data-dismiss="modal" onclick="closeModal()"><i class="fa fa-xmark"></i></button>   
+                <button type="button" id="btn-save" class="btn-save" data-action="agregar" data-congreganteid="" onclick="saveItems(this.dataset.action,this.dataset.congreganteId)"><i class="fa fa-save"></i></button>
+            </div>
+       </div>
+    </div>
+
+    <script type="module" src="../scripts/sCongregantes.js"></script>
+</body>
+</html>

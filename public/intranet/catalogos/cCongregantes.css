@@ -1,0 +1,377 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    display: flex; /* Agregamos Flexbox para mejor control */
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Estilo para la lista de congregantes */
+ul {
+    list-style: none; /* Elimina los marcadores de lista */
+    padding: 0; /* Elimina el padding por defecto de la lista */
+    width: 100%; /* Asegurarnos de que la lista ocupe todo el ancho disponible */
+  }
+  
+li {
+    margin-bottom: 10px; /* Añade un espacio entre cada elemento de la lista */
+}
+
+@media (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas */
+    .container {
+      padding: 10px;
+    }
+    li {
+      font-size: 14px;
+    }
+    #itemList {
+        display: block; /* Asegurarnos de que la lista no esté oculta */
+    }
+    .selectServicios {
+        appearance: nones;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        width: 100%; /* Ocupa todo el ancho disponible en dispositivos móviles */
+      }
+      .selectServicios option.selected {
+        background-color: #e0e0e0;
+        /* Otros estilos que quieras aplicar */
+      }
+      .tabla {
+        font-size: 14px; /* Reduce el tamaño de fuente */
+        border: 1px solid black;
+      }
+      .celda {
+        text-align: center; 
+        border: 1px solid black;
+      }
+
+      table {
+        font-size: 12px;
+      }
+      /* Estilos para pantallas más pequeñas (por ejemplo, tablets) */
+    .tabla1 {
+      font-size: 14px; /* Reducir el tamaño de la fuente */
+    }
+    .tabla1 td {
+      padding: 0.5rem; /* Reducir el padding */
+    }
+    .boton-flotante {
+      position: fixed; /* O otra posición adecuada para móviles */
+      top: 20px;
+      right: 40px;
+      /* Otros ajustes para móviles */
+    }
+    .modal-footer {
+      padding: 10px; /* Reduce el padding */
+      font-size: 14px; /* Reduce el tamaño de la fuente */
+    }
+
+  }
+
+  .lista {
+    overflow-y: auto;
+    height: 500px; /* Ajusta la altura según tus necesidades */
+  }
+  
+  .titulo-fijo {
+    position: sticky;
+    top: 0;
+    /* Otros estilos */
+  }
+
+/* Estilo para el botón flotante */
+.boton-flotante {
+    position: fixed;
+    top: 40px;
+    right: 25px;
+    z-index: 1;
+    background-color: #4c89ec;
+    color: white;
+    /* Aquí hacemos los cambios para que sea circular y más pequeño */
+    width: 40px; /* Ajusta el ancho según tu preferencia */
+    height: 40px;
+    border-radius: 50%; /* Crea las esquinas redondeadas para formar un círculo */
+    line-height: 40px; /* Centra verticalmente el texto dentro del botón */
+    text-align: center;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Nuevo botón flotante con icono de reporte */
+.boton-flotante-reporte {
+  position: fixed;
+  top: 90px; /* Ajusta la posición vertical para que esté debajo del primero */
+  right: 25px;
+  /* Resto de estilos idénticos a .boton-flotante */
+  z-index: 1;
+  background-color: #4c89ec;
+  color: white;
+  /* Aquí hacemos los cambios para que sea circular y más pequeño */
+  width: 40px; /* Ajusta el ancho según tu preferencia */
+  height: 40px;
+  border-radius: 50%; /* Crea las esquinas redondeadas para formar un círculo */
+  line-height: 40px; /* Centra verticalmente el texto dentro del botón */
+  text-align: center;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton-flotante:hover {
+    background-color: #e8bd14;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close i, .btn-save i {
+  font-size: 20px; /* Ajusta el tamaño según tus necesidades */
+}
+
+.select-option {
+    background-color: white; /* Color de fondo por defecto */
+}
+
+.select-option:hover {
+    background-color: #6c8aee; /* Color de fondo al pasar el ratón */
+}
+
+
+  .btn-eliminar {
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    padding: 2px 5px; /* Agrega un poco de espacio alrededor de la X */
+    border-radius: 3px; /* Hace que los bordes sean redondeados */
+    background-color: #f0f0f0; /* Un fondo claro para distinguirlo del texto */
+    color: #333; /* Un color de texto oscuro */
+  }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal-footer {
+  /* Estilos para el pie de página del modal */
+  text-align: center;
+  border-top: 1px solid #888;
+  padding: 15px;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+}
+tr {
+  display: flex;
+}
+td {
+  display: flex;
+  align-items: center; /* flex: 1; Cada celda ocupará el mismo espacio */
+
+}
+
+table td:first-child {
+  flex: 0 0 50px; /* Ancho fijo de 50px */
+  border: 1px solid black;
+  background-color: #f2f2f268;
+}
+
+.mi-div {
+  width: 33.33%; /* Si tienes 3 columnas, cada una ocupará 1/3 del ancho */
+}
+
+.celda-div {
+  border: none;
+}
+
+.celda-amplia {
+  background-color: #f2f2f2; /* Cambia el color de fondo para diferenciar */
+}
+
+
+  .tabla {
+    width: 100%; /* Hace que la tabla ocupe todo el ancho disponible */
+    border: 1px solid black;
+  }
+  
+  .fila {
+    display: flex; /* Convierte cada fila en un contenedor flexible */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    border: 1px solid black;
+  }
+  
+  .celda {
+    flex: 1; /* Hace que cada celda ocupe el espacio disponible */
+    padding: 10px; /* Añade espacio interno a las celdas */
+    border: 1px solid black;
+  }
+
+  .celda-amplia { /* Celda que ocupa dos columnas */
+    flex: 2;
+  }
+  
+  .celda.header {
+    background-color: #f2f2f2;
+    border: 1px solid black;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+
+.modal-header h2 {
+  margin: 0 auto;
+}
+  
+.suggestions {
+    position: absolute;
+    top: 100%; /* Posiciona justo debajo del input */
+    left: 0;
+    z-index: 1;
+    background-color: rgb(180, 224, 244);
+    border: 1px solid #ccc;
+    padding: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Oculto por defecto */
+  }
+  
+.suggestions li {
+    list-style: none;
+    background-color: rgb(180, 224, 244);
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+.suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+
+  .suggestion-item {
+    /* Estilos para los elementos de la lista de sugerencias */
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background-color: lightblue; /* Cambia el color de fondo al pasar el cursor */
+  }
+  
+  .suggestion-item.selected {
+    /* Estilo para la sugerencia seleccionada */
+    font-weight: bold;
+    background-color: #e0e0e0;
+  }
+
+  .btn-agregar {
+    /* Estilos personalizados */
+    cursor: pointer;
+    padding: 3px 8px;
+    font-size: 8px;
+    border-radius: 5px;
+    background-color: #2f3d84; /* Verde */
+    color: white;
+  }
+
+  /*Contenedor de congregantes*/
+  #contenedor .tabla1 {
+    /* Estilos para la tabla */
+    border: 1px solid black;
+  }
+
+  .tabla1 {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .tabla1 th, .tabla1 td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  .tabla1 td:first-child {
+    width: 135px; /* Ajusta el ancho según tus necesidades */
+    min-width: 135px; /* Establece un ancho mínimo */
+    font-weight: bold; /* Texto en negrita */
+    background-color: #2b2929; /* Fondo gris claro */
+    color: white; /* Aquí se establece el color del texto a blanco */
+    text-align: left;
+  }
+
+  .tabla1 td:nth-child(2) {
+    width: 150px; /* Ajusta el ancho según tus necesidades */
+    border: none;
+  }
+
+  .tabla1 td:nth-child(3) {
+    width: 30px; /* Ajusta el ancho según tus necesidades */
+    border: none;
+  }
+
+  /* Estilo para separar las filas de los congregantes */
+.fila-congregante {
+  border-bottom: 2px solid #ccc; /* Borde inferior de cada fila */
+  opacity: 0; /*Oculta el borde */
+}
+
+  .nombre {
+    margin-right: 20px;
+  }
+  
+  .iglesias-select {
+    margin-right: 10px;
+  }
+  
+  .botones {
+    display: flex;
+  }
+  
+  .editar, .borrar {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .fas {
+    font-size: 18px;
+  }

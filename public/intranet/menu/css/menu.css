@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    text-align: center;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ajusta el ancho para que ocupe todo el espacio */
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+
+.contenedor {
+    position: relative; /* Necesario para que la imagen superpuesta se posicione correctamente */
+}
+
+header {
+    position: relative; /* Necesario para que la imagen superpuesta se posicione correctamente */
+    background-image: url("../../images/fondo2.webp");
+    background-size: 100% 100%; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
+    background-position: center; /* Centra la imagen en el encabezado */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    padding: 20px 0;        
+    color: rgb(7, 5, 5);
+    text-align: center;
+    width: 100%; /* Ajusta la altura del header según tus necesidades */
+    height: 100px; /* Ajusta la altura del header según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido esté en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    width: 100%;
+}
+
+.imagen-superpuesta {
+    position: absolute;
+    top: 0px; /* Ajusta la posición vertical de la imagen superpuesta */
+    left: calc(50% - 20px); /* Ajusta la posición horizontal de la imagen superpuesta */
+    width: 40px; /* Ajusta el tamaño de la imagen superpuesta */
+    height: 40px; /* Ajusta el tamaño de la imagen superpuesta */
+    z-index: 5;
+    background-color: rgb(252, 251, 251); 
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        height: 80px;
+        background-size: cover;
+    }
+    .main-container {
+        padding: 20px;
+    }
+}
